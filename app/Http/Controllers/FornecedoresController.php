@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tipo;
+use App\Models\Fornecedor;
 use Illuminate\Http\Request;
 
-class TiposController extends Controller
+class FornecedoresController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class TiposController extends Controller
      */
     public function index()
     {
-        $tipos = Tipo::orderBy('tipo')->get();
-        return view ('base.tipos.index',compact('tipos'));
+        $fornecedores = Fornecedor::orderBy('fornecedor')->get();
+        return view ('base.fornecedores.index',compact('fornecedores'));
     }
 
     /**
@@ -25,7 +25,7 @@ class TiposController extends Controller
      */
     public function create()
     {
-        return view ('base.tipos.create');
+        return view ('base.clientes.create');
     }
 
     /**
@@ -36,10 +36,11 @@ class TiposController extends Controller
      */
     public function store(Request $request)
     {
-        Tipo::create(request()->validate([
-            'tipo' => 'required|max:255|unique:tipos,tipo',
+        Fornecedor::create(request()->validate([
+            'fornecedor' => 'required|max:255|unique:fornecedors,fornecedor',
+            'codgw' => 'numeric',
         ]));
-        return redirect(route('tipos.index'))->with('success','Tipo criado com sucesso!');
+        return redirect(route('fornecedores.index'))->with('success','Fornecedor criado com sucesso!');
     }
 
     /**

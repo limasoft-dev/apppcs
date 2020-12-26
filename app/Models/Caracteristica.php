@@ -12,4 +12,9 @@ class Caracteristica extends Model
     protected $fillable = [
         'caracteristica',
     ];
+
+    public function especificacoes()
+    {
+        return $this->hasMany(Especificacao::class);
+    }
 }

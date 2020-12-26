@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tipo;
+use App\Models\Caracteristica;
+use App\Models\Especificacao;
 use Illuminate\Http\Request;
 
-class TiposController extends Controller
+class EspecificacaosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class TiposController extends Controller
      */
     public function index()
     {
-        $tipos = Tipo::orderBy('tipo')->get();
-        return view ('base.tipos.index',compact('tipos'));
+        $caracteristicas = Caracteristica::orderBy('caracteristica')->get();
+        return view ('base.especificacoes.index',compact('caracteristicas'));
     }
 
     /**
@@ -25,7 +26,8 @@ class TiposController extends Controller
      */
     public function create()
     {
-        return view ('base.tipos.create');
+        $caracteristicas = Caracteristica::orderBy('caracteristica')->get();
+        return view ('base.especificacoes.create',compact('caracteristicas'));
     }
 
     /**
@@ -36,10 +38,11 @@ class TiposController extends Controller
      */
     public function store(Request $request)
     {
-        Tipo::create(request()->validate([
-            'tipo' => 'required|max:255|unique:tipos,tipo',
+        Especificacao::create(request()->validate([
+            'especificacao' => 'required|max:255',
+            'caracteristica_id' => 'exists:caracteristicas,id',
         ]));
-        return redirect(route('tipos.index'))->with('success','Tipo criado com sucesso!');
+        return redirect(route('especificacoes.index'))->with('success','Especificação criada com sucesso!');
     }
 
     /**

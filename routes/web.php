@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\CaracteristicasController;
+use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\EspecificacaosController;
+use App\Http\Controllers\FornecedoresController;
+use App\Http\Controllers\MarcasController;
+use App\Http\Controllers\TiposController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +26,14 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
+
+    Route::resource('tipos', TiposController::class);
+    Route::resource('marcas', MarcasController::class);
+    Route::resource('caracteristicas', CaracteristicasController::class);
+    Route::resource('especificacoes', EspecificacaosController::class);
+    Route::resource('clientes', ClientesController::class);
+    Route::resource('fornecedores', FornecedoresController::class);
+
+});

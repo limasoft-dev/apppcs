@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tipo;
+use App\Models\Marca;
 use Illuminate\Http\Request;
 
-class TiposController extends Controller
+class MarcasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class TiposController extends Controller
      */
     public function index()
     {
-        $tipos = Tipo::orderBy('tipo')->get();
-        return view ('base.tipos.index',compact('tipos'));
+        $marcas = Marca::orderBy('marca')->get();
+        return view ('base.marcas.index',compact('marcas'));
     }
 
     /**
@@ -25,7 +25,7 @@ class TiposController extends Controller
      */
     public function create()
     {
-        return view ('base.tipos.create');
+        return view ('base.marcas.create');
     }
 
     /**
@@ -36,10 +36,10 @@ class TiposController extends Controller
      */
     public function store(Request $request)
     {
-        Tipo::create(request()->validate([
-            'tipo' => 'required|max:255|unique:tipos,tipo',
+        Marca::create(request()->validate([
+            'marca' => 'required|max:255|unique:marcas,marca',
         ]));
-        return redirect(route('tipos.index'))->with('success','Tipo criado com sucesso!');
+        return redirect(route('marcas.index'))->with('success','Marca criada com sucesso!');
     }
 
     /**

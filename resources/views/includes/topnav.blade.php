@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -13,18 +13,28 @@
             @auth
             {{-- Zona para Autenticados --}}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Admin Link</a>
+                        <a class="nav-link" href="#">-Ba</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Computadores
+                        Base
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Máquinas</a>
-                        <a class="dropdown-item" href="#">Intervenções</a>
+                        <a class="dropdown-item" href="{{route('tipos.index')}}">Tipos</a>
+                        <a class="dropdown-item" href="{{route('marcas.index')}}">Marcas</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Marcas</a>
-                        <a class="dropdown-item" href="#">Características</a>
+                        <a class="dropdown-item" href="{{route('caracteristicas.index')}}">Características</a>
+                        <a class="dropdown-item" href="{{route('especificacoes.index')}}">Especificações</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Máquinas
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Computadores</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Intervenções</a>
                         </div>
                     </li>
                     <li class="nav-item">

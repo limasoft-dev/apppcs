@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tipo;
+use App\Models\Cliente;
 use Illuminate\Http\Request;
 
-class TiposController extends Controller
+class ClientesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class TiposController extends Controller
      */
     public function index()
     {
-        $tipos = Tipo::orderBy('tipo')->get();
-        return view ('base.tipos.index',compact('tipos'));
+        $clientes = Cliente::orderBy('cliente')->get();
+        return view ('base.clientes.index',compact('clientes'));
     }
 
     /**
@@ -25,7 +25,7 @@ class TiposController extends Controller
      */
     public function create()
     {
-        return view ('base.tipos.create');
+        return view ('base.clientes.create');
     }
 
     /**
@@ -36,10 +36,11 @@ class TiposController extends Controller
      */
     public function store(Request $request)
     {
-        Tipo::create(request()->validate([
-            'tipo' => 'required|max:255|unique:tipos,tipo',
+        Cliente::create(request()->validate([
+            'cliente' => 'required|max:255|unique:clientes,cliente',
+            'codgw' => 'numeric',
         ]));
-        return redirect(route('tipos.index'))->with('success','Tipo criado com sucesso!');
+        return redirect(route('clientes.index'))->with('success','Cliente criado com sucesso!');
     }
 
     /**

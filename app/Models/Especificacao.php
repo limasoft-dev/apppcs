@@ -13,4 +13,9 @@ class Especificacao extends Model
         'especificacao',
         'caracteristica_id',
     ];
+
+    public function caracteristica()
+    {
+        return $this->belongsTo(Caracteristica::class);
+    }
 }
