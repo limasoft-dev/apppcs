@@ -16,7 +16,7 @@ class CreateComputadorsTable extends Migration
         Schema::create('computadors', function (Blueprint $table) {
             $table->id();
             $table->tinyInteger('limasoft');
-            $table->string('serialnr');
+            $table->string('serialnr')->nullable();
             $table->foreignId('marca_id')->constrained();
             $table->tinyInteger('recondicionado');
             $table->foreignId('tipo_id')->constrained();

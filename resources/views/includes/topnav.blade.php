@@ -36,7 +36,7 @@
                         Máquinas
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Computadores</a>
+                            <a class="dropdown-item" href="{{route('computadores.index')}}">Computadores</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Intervenções</a>
                         </div>
