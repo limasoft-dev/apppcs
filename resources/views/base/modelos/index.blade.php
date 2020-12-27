@@ -55,7 +55,7 @@
                                           </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse ($marca->modelos as $modelo)
+                                            @forelse ($marca->modelos->sortBy('modelo') as $modelo)
                                                 <tr>
                                                     <th scope="row">{{$modelo->id}}</th>
                                                     <td>{{$modelo->tipo->tipo}}</td>
@@ -94,7 +94,7 @@
 
 
 
-                  </div>
+                </div>
 
 
 

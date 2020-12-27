@@ -21,7 +21,6 @@ class CreateComputadorsTable extends Migration
             $table->tinyInteger('recondicionado');
             $table->foreignId('tipo_id')->constrained();
             $table->foreignId('modelo_id')->constrained();
-            $table->string('so')->nullable();
             $table->string('sokey')->nullable();
             $table->foreignId('fornecedor_id')->constrained();
             $table->string('faturac')->nullable();

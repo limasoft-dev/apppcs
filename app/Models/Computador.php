@@ -16,7 +16,6 @@ class Computador extends Model
         'recondicionado',
         'tipo_id',
         'modelo_id',
-        'so',
         'sokey',
         'fornecedor_id',
         'faturac',
