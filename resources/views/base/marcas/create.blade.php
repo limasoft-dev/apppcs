@@ -34,9 +34,7 @@
                         <label for="tipo">Marca</label>
                         <input type="text" class="form-control" id="marca" name="marca" value={{old('marca')}}>
                         @error('marca')
-                            <div class="invalid-feedback">
-                                {{$message}}
-                            </div>
+                            <div class="text-danger"><small>{{ $message }}</small></div>
                         @enderror
                     </div>
 

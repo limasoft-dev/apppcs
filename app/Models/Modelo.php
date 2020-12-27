@@ -14,4 +14,14 @@ class Modelo extends Model
         'marca_id',
         'tipo_id',
     ];
+
+    public function marca()
+    {
+        return $this->belongsTo(Marca::class);
+    }
+
+    public function tipo()
+    {
+        return $this->belongsTo(Tipo::class);
+    }
 }

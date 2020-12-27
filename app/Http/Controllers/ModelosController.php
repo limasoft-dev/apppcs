@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Fornecedor;
+use App\Models\Marca;
+use App\Models\Modelo;
+use App\Models\Tipo;
 use Illuminate\Http\Request;
 
-class FornecedoresController extends Controller
+class ModelosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,8 @@ class FornecedoresController extends Controller
      */
     public function index()
     {
-        $fornecedores = Fornecedor::orderBy('fornecedor')->get();
-        return view ('base.fornecedores.index',compact('fornecedores'));
+        $marcas = Marca::orderBy('marca')->get();
+        return view ('base.modelos.index',compact('marcas'));
     }
 
     /**
@@ -25,7 +27,9 @@ class FornecedoresController extends Controller
      */
     public function create()
     {
-        return view ('base.fornecedores.create');
+        $marcas = Marca::orderBy('marca')->get();
+        $tipos = Tipo::orderBy('tipo')->get();
+        return view ('base.modelos.create',compact('marcas','tipos'));
     }
 
     /**
@@ -36,11 +40,12 @@ class FornecedoresController extends Controller
      */
     public function store(Request $request)
     {
-        Fornecedor::create(request()->validate([
-            'fornecedor' => 'required|max:255|unique:fornecedors,fornecedor',
-            'codgw' => 'sometimes|numeric',
+        Modelo::create(request()->validate([
+            'marca_id' => 'required|exists:marcas,id',
+            'tipo_id' => 'required|exists:tipos,id',
+            'modelo' => 'required|max:255',
         ]));
-        return redirect(route('fornecedores.index'))->with('success','Fornecedor criado com sucesso!');
+        return redirect(route('modelos.index'))->with('success','Modelo criado com sucesso!');
     }
 
     /**

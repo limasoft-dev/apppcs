@@ -20,11 +20,15 @@
                         Base
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{route('tipos.index')}}">Tipos</a>
-                        <a class="dropdown-item" href="{{route('marcas.index')}}">Marcas</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{{route('caracteristicas.index')}}">Características</a>
-                        <a class="dropdown-item" href="{{route('especificacoes.index')}}">Especificações</a>
+                            <a class="dropdown-item" href="{{route('tipos.index')}}">Tipos</a>
+                            <a class="dropdown-item" href="{{route('marcas.index')}}">Marcas</a>
+                            <a class="dropdown-item" href="{{route('modelos.index')}}">Modelos</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{route('caracteristicas.index')}}">Características</a>
+                            <a class="dropdown-item" href="{{route('especificacoes.index')}}">Especificações</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{route('clientes.index')}}">Clientes</a>
+                            <a class="dropdown-item" href="{{route('fornecedores.index')}}">Fornecedores</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">

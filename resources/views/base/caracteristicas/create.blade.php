@@ -34,9 +34,7 @@
                         <label for="tipo">Característica</label>
                         <input type="text" class="form-control" id="caracteristica" name="caracteristica" value={{old('caracteristica')}}>
                         @error('caracteristica')
-                            <div class="invalid-feedback">
-                                {{$message}}
-                            </div>
+                            <div class="text-danger"><small>{{ $message }}</small></div>
                         @enderror
                     </div>
 

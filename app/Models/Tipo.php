@@ -12,4 +12,9 @@ class Tipo extends Model
     protected $fillable = [
         'tipo',
     ];
+
+    public function modelos()
+    {
+        return $this->hasMany(Modelo::class);
+    }
 }

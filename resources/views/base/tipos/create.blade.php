@@ -34,9 +34,7 @@
                         <label for="tipo">Tipo de Computador</label>
                         <input type="text" class="form-control" id="tipo" name="tipo" value={{old('tipo')}}>
                         @error('tipo')
-                            <div class="invalid-feedback">
-                                {{$message}}
-                            </div>
+                            <div class="text-danger"><small>{{ $message }}</small></div>
                         @enderror
                     </div>
 

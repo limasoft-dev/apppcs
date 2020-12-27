@@ -41,9 +41,7 @@
                           @endforeach
                       </select>
                       @error('caracteristica_id')
-                        <div class="invalid-feedback">
-                            {{$message}}
-                        </div>
+                        <div class="text-danger"><small>{{ $message }}</small></div>
                       @enderror
                     </div>
 
@@ -51,9 +49,7 @@
                         <label for="especificacao">Especificação</label>
                         <input type="text" class="form-control" id="especificacao" name="especificacao" value={{old('especificacao')}}>
                         @error('especificacao')
-                            <div class="invalid-feedback">
-                                {{$message}}
-                            </div>
+                            <div class="text-danger"><small>{{ $message }}</small></div>
                         @enderror
                     </div>
 
