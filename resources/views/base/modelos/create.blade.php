@@ -33,9 +33,10 @@
                     <div class="form-group">
                       <label for="tipo_id">Tipo</label>
                       <select name="tipo_id" class="form-control">
+                        <option value="0" selected>Selecione um tipo</option>
                           @foreach ($tipos as $tipo)
                             <option value="{{$tipo->id}}"
-                                @if ($tipo->tipo_id == old('tipo_id'))
+                                @if ($tipo->id == old('tipo_id'))
                                     selected
                                 @endif>{{$tipo->tipo}}</option>
                           @endforeach
@@ -48,9 +49,10 @@
                     <div class="form-group">
                         <label for="marca_id">Marca</label>
                         <select name="marca_id" class="form-control">
+                            <option value="0" selected>Selecione uma marca</option>
                             @foreach ($marcas as $marca)
                               <option value="{{$marca->id}}"
-                                  @if ($marca->marca_id == old('marca_id'))
+                                  @if ($marca->id == old('marca_id'))
                                       selected
                                   @endif>{{$marca->marca}}</option>
                             @endforeach

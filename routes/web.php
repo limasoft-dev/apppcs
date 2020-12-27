@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CaracteristicasController;
 use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\ComputadoresController;
 use App\Http\Controllers\EspecificacaosController;
 use App\Http\Controllers\FornecedoresController;
 use App\Http\Controllers\MarcasController;
@@ -37,5 +38,6 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::resource('clientes', ClientesController::class);
     Route::resource('fornecedores', FornecedoresController::class);
     Route::resource('modelos', ModelosController::class);
+    Route::resource('computadores', ComputadoresController::class);
 
 });

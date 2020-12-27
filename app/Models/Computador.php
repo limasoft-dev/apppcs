@@ -25,4 +25,25 @@ class Computador extends Model
         'datafaturav',
         'obs',
     ];
+
+    public function marca()
+    {
+        return $this->belongsTo(Marca::class);
+    }
+    public function tipo()
+    {
+        return $this->belongsTo(Tipo::class);
+    }
+    public function modelo()
+    {
+        return $this->belongsTo(Modelo::class);
+    }
+    public function fornecedor()
+    {
+        return $this->belongsTo(Fornecedor::class);
+    }
+    public function cliente()
+    {
+        return $this->belongsTo(Cliente::class);
+    }
 }

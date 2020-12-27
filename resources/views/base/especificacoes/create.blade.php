@@ -33,9 +33,10 @@
                     <div class="form-group">
                       <label for="caracteristica_id">Característica</label>
                       <select name="caracteristica_id" class="form-control">
+                          <option value="0" selected>Selecione uma característica</option>
                           @foreach ($caracteristicas as $caracteristica)
                             <option value="{{$caracteristica->id}}"
-                                @if ($caracteristica->caracteristica_id == old('caracteristica_id'))
+                                @if ($caracteristica->id == old('caracteristica_id'))
                                     selected
                                 @endif>{{$caracteristica->caracteristica}}</option>
                           @endforeach
